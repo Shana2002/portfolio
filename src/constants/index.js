@@ -3,6 +3,7 @@ import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
 import project5 from "../assets/projects/project-5.jpg";
+import project6 from "../assets/projects/project-6.png";
 
 export const HERO_CONTENT = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. Currently pursuing my undergraduate degree at Cardiff Metropolitan University, I have honed my skills in front-end technologies like HTML, CSS, JavaScript, and React, as well as back-end technologies like Node.js, PHP, Python, MySQL, and MongoDB. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
 
@@ -46,13 +47,15 @@ export const PROJECTS = [
     description:
       "Welcome to the repository for The Gallery Café website and food ordering system.",
     technologies: ["HTML", "CSS", "JS","PHP","MYSQL"],
+    link: "https://github.com/Shana2002/galleryCafe",
   },
   {
     title: "Chat Platform",
-    image: project2,
+    image: project4,
     description:
       "An application for chat with users.Including mobile friendly",
     technologies: ["HTML", "CSS", "JS", "JQUERY","PHP","MYSQL","AJAX"],
+    link: "https://github.com/Shana2002/",
   },
   {
     title: "Portfolio Website",
@@ -60,13 +63,7 @@ export const PROJECTS = [
     description:
       "A personal portfolio website showcasing projects, skills, and contact information.",
     technologies: ["HTML", "CSS", "React", "Tailwaind"],
-  },
-  {
-    title: "Blogging Platform",
-    image: project4,
-    description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+    link: "https://github.com/Shana2002/portfolio",
   },
   {
     title: "Crypto Currency mobile app",
@@ -74,6 +71,15 @@ export const PROJECTS = [
     description:
       "Coin Master is a Flutter-based platform that provides real-time details about cryptocurrencies, integrated with the CoinGecko API for accurate and up-to-date market information.",
     technologies: ["Flutter", "API", "Http"],
+    link: "https://github.com/Shana2002/coin-master",
+  },
+  {
+    title: "Inventory Management System",
+    image: project6,
+    description:
+      "This Inventory Management and Billing System is a comprehensive application built using Python GUI, specifically designed for Thushara Photo Framing. It streamlines inventory management and facilitates billing processes, providing robust features for managing customer relationships, stock, and financial transactions.",
+    technologies: ["Python", "SqlLite"],
+    link: "https://github.com/Shana2002/IMS",
   },
 ];
 

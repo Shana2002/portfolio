@@ -1,6 +1,7 @@
 import React from 'react'
 import { PROJECTS } from "../constants";
 import {  motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 
 
 const project = () => {
@@ -14,7 +15,7 @@ const project = () => {
         <div>
             
             {PROJECTS.map((project,index)=>(
-                <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
+                <div key={index} className="mb-8 flex flex-wrap lg:justify-center items-center">
                     <motion.div
                     whileInView={{opacity:1, x:0}}
                     initial={{opacity:0 , x:-100}}
@@ -33,7 +34,7 @@ const project = () => {
                     initial={{opacity:0 , x:100}}
                     transition={{duration:0.5}}
                     className="w-full max-w-xl lg:w-3/4">
-                    <h6 className='mb-2 font-semibold'>{project.title}</h6>
+                    <h6 className='mb-2 font-semibold'><a className='flex gap-2 items-center' target="_blank" href={project.link}><FaGithub />{project.title}</a></h6>
                     <p className="mb-4 text-neutral-400">{project.description}</p>
                     {
                         project.technologies.map((tech,index)=>(
