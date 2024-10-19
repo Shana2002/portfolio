@@ -1,5 +1,5 @@
 import { HERO_CONTENT } from "../constants/index";
-import profilePic from "../assets/shan2.png";
+import profilePic from "../assets/shan4.jpg";
 import { motion } from "framer-motion";
 
 const container= (delay)=>({
