@@ -3,6 +3,7 @@ import { PROJECTS } from "../constants";
 import { FaGithub } from "react-icons/fa";
 
 function ProjectDetails({ project, onClose }) {
+  
   return (
     <div className='top-0 bottom-0 w-[100vw] h-[100vh] fixed flex items-center justify-center'>
       <div className='w-[80vw] h-[80vh] bg-gray-800 rounded-2xl flex flex-col scroll-auto sm:flex-row gap-2 overflow-y-auto'>

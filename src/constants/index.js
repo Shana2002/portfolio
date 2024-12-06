@@ -41,7 +41,8 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
-  {
+  { 
+    name:"e-commerce-website",
     title: "E-Commerce Website",
     image: project1,
     description:
@@ -50,6 +51,7 @@ export const PROJECTS = [
     link: "https://github.com/Shana2002/galleryCafe",
   },
   {
+    name:"chat-platform",
     title: "Chat Platform",
     image: project4,
     description:
@@ -58,6 +60,7 @@ export const PROJECTS = [
     link: "https://github.com/Shana2002/",
   },
   {
+    name:"portfolio",
     title: "Portfolio Website",
     image: project3,
     description:
@@ -66,6 +69,7 @@ export const PROJECTS = [
     link: "https://github.com/Shana2002/portfolio",
   },
   {
+    name:"crypto-currency",
     title: "Crypto Currency mobile app",
     image: project5,
     description:
@@ -74,6 +78,7 @@ export const PROJECTS = [
     link: "https://github.com/Shana2002/coin-master",
   },
   {
+    name:"ims",
     title: "Inventory Management System",
     image: project6,
     description:
