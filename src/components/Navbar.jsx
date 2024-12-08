@@ -8,6 +8,8 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
+import { ImProfile } from "react-icons/im";
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,11 +28,11 @@ const Navbar = () => {
           <img className="mx-2 w-10" src={logo} alt="logo" />
         </div>
         <div className="hidden lg:flex text-lg gap-3">
-          <Alink text="Home" link="contact" />
-          <Alink text="About" link="contact" />
-          <Alink text="Technology" link="contact" />
-          <Alink text="Projects" link="contact" />
-          <Alink text="Educations" link="contact" />
+          <Alink text="Home" link="home" />
+          <Alink text="About" link="about" />
+          <Alink text="Technology" link="tech" />
+          <Alink text="Projects" link="projects" />
+          <Alink text="Educations" link="education" />
           <Alink text="contact" link="contact" />
         </div>
         <div className="m-8 flex items-center justify-center gap-4 text-2xl text-white">
@@ -43,6 +45,7 @@ const Navbar = () => {
           <a href="https://www.instagram.com/rav1shan._/">
             <FaInstagram />
           </a>
+          <a href="src/assets/hansaka_ravishan.pdf" download="hansaka.pdf"><ImProfile /></a>
         </div>
         <button onClick={toggleMenu} className="lg:hidden text-white">
           {menuOpen ? <FaTimes /> : <FaBars />}

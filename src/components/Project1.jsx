@@ -61,7 +61,7 @@ const project = () => {
   }
 
   return (
-    <div className="flex flex-col border-b border-neutral-900 pb-4">
+    <div className="flex flex-col border-b border-neutral-900 pb-4" id="projects">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
