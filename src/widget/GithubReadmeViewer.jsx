@@ -11,7 +11,7 @@ const GitHubReadmeViewer = ({ user, repo }) => {
     const fetchReadme = async () => {
       try {
         const response = await fetch(
-          `https://api.github.com/repos/${user}/${repo}/readme`
+          `https://api.github.com/repos/shana2002/${repo}/readme`
         );
         const data = await response.json();
         
