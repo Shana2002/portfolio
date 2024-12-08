@@ -2,54 +2,61 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import axios from "axios";
-
+const sampleImage = "https://via.placeholder.com/150";
 const ProjectLists = () => {
-    const [projects, setProjects] = useState([]); // State to store projects
-    const [loading, setLoading] = useState(true); // Loading state
-    const [error, setError] = useState(null); // Error state
-    const [topics, setTopics] = useState({}); // State to store topics for each project
-  
-    useEffect(() => {
-      const fetchProjects = async () => {
-        try {
-          setLoading(true);
-          const response = await axios.get("https://api.github.com/users/shana2002/repos");
-          const projectData = response.data;
-  
-          setProjects(projectData);
-  
-          // Fetch topics for each project
-          const topicsData = {};
-          await Promise.all(
-            projectData.map(async (project) => {
-              const topicResponse = await axios.get(
-                `https://api.github.com/repos/shana2002/${project.name}/topics`,
-                {
-                  headers: {
-                    Accept: "application/vnd.github.mercy-preview+json",
-                  },
-                }
-              );
-              topicsData[project.name] = topicResponse.data.names || [];
-            })
-          );
-          setTopics(topicsData);
-        } catch (err) {
-          setError("Failed to fetch projects or topics.");
-        } finally {
-          setLoading(false);
-        }
-      };
-      fetchProjects();
-    }, []);
-  
-    if (loading) {
-      return <p className="text-center text-neutral-400">Loading projects...</p>;
-    }
-  
-    if (error) {
-      return <p className="text-center text-red-500">{error}</p>;
-    }
+  const [projects, setProjects] = useState([]); // State to store projects
+  const [loading, setLoading] = useState(true); // Loading state
+  const [error, setError] = useState(null); // Error state
+  const [topics, setTopics] = useState({}); // State to store topics for each project
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          "https://api.github.com/users/shana2002/repos",{
+            headers: { 
+                Authorization: ''
+              }
+          }
+        );
+        const projectData = response.data;
+
+        setProjects(projectData);
+
+        // Fetch topics for each project
+        const topicsData = {};
+        await Promise.all(
+          projectData.map(async (project) => {
+            const topicResponse = await axios.get(
+              `https://api.github.com/repos/shana2002/${project.name}/topics`,
+              {
+                headers: {
+                  Accept: "application/vnd.github.mercy-preview+json",
+                  Authorization: '',
+                },
+              }
+            );
+            topicsData[project.name] = topicResponse.data.names || [];
+          })
+        );
+        setTopics(topicsData);
+      } catch (err) {
+        setError("Failed to fetch projects or topics.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProjects();
+  }, []);
+
+  if (loading) {
+    return <p className="text-center text-neutral-400">Loading projects...</p>;
+  }
+
+  if (error) {
+    return <p className="text-center text-red-500">{error}</p>;
+  }
 
   return (
     <div className="border-b border-neutral-900 pb-4">
@@ -75,7 +82,10 @@ const ProjectLists = () => {
                 className="w-1/2"
               >
                 <img
-                  src="https://via.placeholder.com/150" // Placeholder for project images
+                  src={
+                    `https://github.com/Shana2002/${project.name}/blob/main/sample.png?raw=true` ||
+                    sampleImage
+                  } // Placeholder for project images
                   alt={project.name}
                   className="w-full h-52 mb-6 rounded-s object-contain"
                 />
@@ -101,16 +111,7 @@ const ProjectLists = () => {
                   {project.description || "No description available."}
                 </p>
                 <div className="w-full flex flex-wrap">
-                  {/* {project.topics &&
-                    project.topics.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="mr-2 rounded bg-neutral-900 px-3 py-1 text-sm my-2"
-                      >
-                        {tech}
-                      </span>
-                    ))} */}
-                    {topics[project.name] &&
+                  {topics[project.name] &&
                     topics[project.name].map((topic, index) => (
                       <span
                         key={index}
